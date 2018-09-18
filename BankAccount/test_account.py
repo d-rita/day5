@@ -6,7 +6,7 @@ from account import BankAccount
 class BankAccountTest(unittest.TestCase):
 
     def setUp(self):
-        self.account = BankAccount()
+        self.account = BankAccount('Vee')
 
     def test_newly_opened_account_has_zero_balance(self):
         self.account.open()

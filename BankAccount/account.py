@@ -1,18 +1,43 @@
 class BankAccount:
-    def __init__(self):
-        pass
-
+    balance=0
+    def __init__(self, name):
+        self.name=name
+        
     def get_balance(self):
-        pass
+        if self.balance==None:
+            raise ValueError
+        else:
+            return self.balance
 
     def open(self):
-        pass
+        self.get_balance()
+
 
     def deposit(self, amount):
-        pass
+        if self.balance==None:
+            raise ValueError
+        else:
+            if amount<0:
+                raise ValueError
+            elif amount== 0:
+                raise ValueError
+            else:
+                self.balance+=amount
+                self.get_balance()
 
     def withdraw(self, amount):
-        pass
+        if self.balance==None:
+            raise ValueError
+        else:
+            if amount>self.balance:
+                raise ValueError
+            elif amount<0:
+                raise ValueError
+            else:
+                self.balance-=amount
+                self.get_balance()
 
     def close(self):
-        pass
+        self.name=None
+        self.balance=None
+        
